@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arrayKosong = [];
+      let arrayNama = ["Muhammad", "Irfan", "Zidni"];
+
+      const names = [];
+      names.push("Irfan");
+      names.push("Zidni");
+      names.push("Muhammad");
+
+      console.table(names);
+
+      delete names[3];
+      console.table(names);
+
+      names.push("Irfan Lagi");
+      console.table(names);
+
+      names[3] = "Diubah Lagi";
+      names.push(1, 2, 3, 4, 5);
+      names.push(["Muhammad", "Irfan", "Zidni"]);
+
+      console.table(names);
+    </script>
+  </body>
+</html>

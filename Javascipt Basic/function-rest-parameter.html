@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function Rest Parameter</title>
+  </head>
+  <body>
+    <script>
+      function sum(name, ...data) {
+        let total = 0;
+        for (const item of data) {
+          total += item;
+        }
+        document.writeln(`<p>Total ${name} is ${total}</p>`);
+      }
+
+      sum("Orange", 10, 30, 80, 50, 80);
+      sum("Apel", 10, 30, 80, 50, 80);
+      sum("Pir", 10, 30, 80, 50, 80);
+
+      // Spread Syntax
+
+      const values = [10, 10, 10, 10, 10];
+      sum("Test", ...values);
+
+      // Argument Object (Fitur Lama)
+
+      function oldSum() {
+        console.info(arguments);
+        let total = 0;
+        for (const argument of arguments) {
+          total += argument;
+        }
+        document.writeln(`<p>Total is ${total}</p>`);
+      }
+
+      oldSum(1, 2, 3, 4, 5);
+    </script>
+  </body>
+</html>

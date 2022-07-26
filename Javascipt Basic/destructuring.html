@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructuring</title>
+  </head>
+  <body>
+    <script>
+      // Mengakses array satu per satu
+
+      // const names = ["Muhammad", "Irfan", "Zidni"];
+
+      // const firstName = names[0];
+      // const middleName = names[1];
+      // const lastName = names[2];
+
+      // console.info(firstName);
+      // console.info(middleName);
+      // console.info(lastName);
+
+      // Destructuring Array
+      {
+        const names = ["Muhammad", "Irfan", "Zidni", "Budi", "Joko"];
+        let [firstName, middleName, lastName, ...others] = names;
+
+        console.info(firstName);
+        console.info(middleName);
+        console.info(lastName);
+        console.info(others);
+      }
+
+      // Mengambil Data di Object
+
+      {
+        const person = {
+          firstName: "Muhammad",
+          middleName: "Irfan",
+          lastName: "Zidni",
+          address: {
+            street: "Jalan Belum Ada",
+            city: "Jakarta",
+            country: "Indoensia",
+          },
+          hobby: "Nyari Cuan",
+          kesibukan: "Kuliah",
+        };
+
+        let {
+          firstName,
+          lastName,
+          address: { city, street, country },
+          ...others
+        } = person;
+
+        console.info(firstName);
+        console.info(lastName);
+        console.info(street);
+        console.info(city);
+        console.info(country);
+        console.info(others);
+      }
+
+      // Destructuring Nested Object
+
+      {
+        // Destrucuting di Function Parameter (1)
+        function displayPerson({ firstName, middleName, lastName }) {
+          console.info(firstName);
+          console.info(middleName);
+          console.info(lastName);
+        }
+        const person = {
+          firstName: "Muhammad",
+          middleName: "Irfan",
+          lastName: "Zidi",
+        };
+      }
+
+      {
+        // Destrucuting di Function Parameter (2)
+        function sum({ first, second }) {
+          return first + second;
+        }
+
+        console.info(sum([1, 1]));
+        console.info(sum([20, 1]));
+      }
+
+      {
+        // Default Value Destructuring Array
+        const names = ["Irfan", "Zidni"];
+        const [firstName, middleName, lastName = "Zidni"] = names;
+
+        console.info(firstName);
+        console.info(middleName);
+        console.info(lastName);
+      }
+
+      {
+        const person = {
+          firstName: "Muhammad",
+
+          lastName: "Zidni",
+        };
+
+        let { firstName, middleName = "Zidni Value Kosong" } = person;
+
+        console.info(firstName);
+        console.info(middleName);
+      }
+
+      {
+        const person = {
+          firstName: "Muhammad",
+          middleName: "Irfan",
+          lastName: "Zidni Nama Belakang",
+        };
+
+        let {
+          firstName: namaDepan,
+          middleName: namaTengah,
+          lastName: namaBelakang,
+        } = person;
+
+        console.info(namaDepan);
+        console.info(namaTengah);
+        console.info(namaBelakang);
+      }
+    </script>
+  </body>
+</html>
